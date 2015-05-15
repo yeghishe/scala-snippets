@@ -21,14 +21,12 @@ object Example {
   case class FollowerStats(
     username: String,
     numFollowers: Int,
-    numFollowing: Int
-  )
+    numFollowing: Int)
 
   case class Cache(
-    stats: Map[String, Timestamped[FollowerStats]],
-    hits: Int,
-    misses: Int
-  ) {
+      stats: Map[String, Timestamped[FollowerStats]],
+      hits: Int,
+      misses: Int) {
     def get(username: String): Option[Timestamped[FollowerStats]] =
       stats.get(username)
 
@@ -81,8 +79,6 @@ object Example {
 import Example._
 
 object DemoExample {
-
-
   def main(args: Array[String]): Unit = {
     val socialService = implicitly[SocialService]
 

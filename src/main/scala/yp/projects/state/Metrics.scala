@@ -30,7 +30,6 @@ object Metrics {
 }
 */
 
-
 /*
 case class Data(map: Map[String, Int]) {
   def get(name: String): Option[Int] = map.get(name)
@@ -39,8 +38,6 @@ case class Data(map: Map[String, Int]) {
   def inc(name: String): Data = incBy(name, 1)
 }
 */
-
-
 
 sealed trait Metrics {
   type StateMetrics[A] = State[Map[String, Int], A]
@@ -68,7 +65,7 @@ object Metrics {
 }
 
 object DemoMetrics {
-  def main (args: Array[String]) {
+  def main(args: Array[String]) {
 
     //import Metrics.StateMetrics
 
@@ -77,7 +74,6 @@ object DemoMetrics {
     //val stateOfList = listOfStates.sequence[StateMetrics, ]
 
     //metrics.getValue("a").
-
 
     /*
     val metrics = implicitly[Metrics]
