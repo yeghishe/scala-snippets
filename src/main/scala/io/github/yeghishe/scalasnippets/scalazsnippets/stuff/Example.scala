@@ -1,7 +1,7 @@
-package yp.projects.state
+package io.github.yeghishe.scalasnippets.scalazsnippets.stuff
 
+import scalaz.Scalaz._
 import scalaz._
-import Scalaz._
 /*
 import scalaz.syntax.std.option._
 import scalaz.State
@@ -76,18 +76,16 @@ object Example {
   }
 }
 
-import Example._
+import io.github.yeghishe.scalasnippets.scalazsnippets.stuff.Example._
 
-object DemoExample {
-  def main(args: Array[String]): Unit = {
-    val socialService = implicitly[SocialService]
+object DemoExample extends App {
+  val socialService = implicitly[SocialService]
 
-    val listOfState = List(socialService.followerStats("a"), socialService.followerStats("b"), socialService.followerStats("a"))
-    val stateOfList = listOfState.sequence[StateCache, FollowerStats]
+  val listOfState = List(socialService.followerStats("a"), socialService.followerStats("b"), socialService.followerStats("a"))
+  val stateOfList = listOfState.sequence[StateCache, FollowerStats]
 
-    //println(State.state[StateCache](10).runZero)
-    println(10.point[StateCache].runZero)
+  //println(State.state[StateCache](10).runZero)
+  println(10.point[StateCache].runZero)
 
-    println(stateOfList.runZero)
-  }
+  println(stateOfList.runZero)
 }

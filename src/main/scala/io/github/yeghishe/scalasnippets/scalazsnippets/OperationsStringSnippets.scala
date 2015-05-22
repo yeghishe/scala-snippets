@@ -1,4 +1,4 @@
-package io.github.yeghishe.scalazsnippets
+package io.github.yeghishe.scalasnippets.scalazsnippets
 
 /**
  * Created by yeghishe on 5/14/15.

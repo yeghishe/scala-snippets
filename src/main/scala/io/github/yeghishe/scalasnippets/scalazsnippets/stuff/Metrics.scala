@@ -1,7 +1,6 @@
-package yp.projects.state
+package io.github.yeghishe.scalasnippets.scalazsnippets.stuff
 
 import scalaz._
-import Scalaz._
 
 /**
  * Created by yeghishe on 2/10/15.
@@ -64,29 +63,26 @@ object Metrics {
   }
 }
 
-object DemoMetrics {
-  def main(args: Array[String]) {
+object DemoMetrics extends App {
+  //import Metrics.StateMetrics
 
-    //import Metrics.StateMetrics
+  val metrics = implicitly[Metrics]
+  val listOfStates = List(metrics.setValue("a", 1), metrics.inc("a"), metrics.getValue("a"))
+  //val stateOfList = listOfStates.sequence[StateMetrics, ]
 
-    val metrics = implicitly[Metrics]
-    val listOfStates = List(metrics.setValue("a", 1), metrics.inc("a"), metrics.getValue("a"))
-    //val stateOfList = listOfStates.sequence[StateMetrics, ]
+  //metrics.getValue("a").
 
-    //metrics.getValue("a").
+  /*
+  val metrics = implicitly[Metrics]
 
-    /*
-    val metrics = implicitly[Metrics]
-
-    for {
-      s <- metrics.setValue("a", 1)
-      x <- s.get
-    }
-    metrics.setValue("a", 1).
-      .get("a")
-      .eval(Map.empty)
-
-    println(x)
-    */
+  for {
+    s <- metrics.setValue("a", 1)
+    x <- s.get
   }
+  metrics.setValue("a", 1).
+    .get("a")
+    .eval(Map.empty)
+
+  println(x)
+  */
 }

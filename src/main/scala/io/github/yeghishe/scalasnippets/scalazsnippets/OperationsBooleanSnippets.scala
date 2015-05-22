@@ -1,4 +1,4 @@
-package io.github.yeghishe.scalazsnippets
+package io.github.yeghishe.scalasnippets.scalazsnippets
 
 /**
  * Created by yeghishe on 5/14/15.
@@ -118,7 +118,6 @@ object OperationsBooleanSnippets extends App {
     display(Conjunction(false) ⊹ Conjunction(false), """ Conjunction(true) ⊹ Conjunction(false) """)
     display(Conjunction(true) ⊹ ∅, """ ∅[Conjunction] """)
   }
-
 
   {
     import scalaz.Tags.Disjunction

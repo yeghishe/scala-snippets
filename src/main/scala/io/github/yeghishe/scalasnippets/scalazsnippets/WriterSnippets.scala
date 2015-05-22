@@ -1,4 +1,4 @@
-package io.github.yeghishe.scalazsnippets
+package io.github.yeghishe.scalasnippets.scalazsnippets
 
 /**
  * Created by yeghishe on 2/13/15.
@@ -7,7 +7,7 @@ package io.github.yeghishe.scalazsnippets
 import scalaz.Scalaz._
 import scalaz._
 
-object WriterSnippets {
+object WriterSnippets extends App {
   case class Customer(id: Int, name: String)
   case class Order(id: Int, name: String, customerId: Int)
 
@@ -20,14 +20,12 @@ object WriterSnippets {
     }
   }
 
-  def main(args: Array[String]): Unit = {
-    1 to 4 foreach { customerId =>
-      val res = findOrdersForCustomer(customerId)
-      val orders = res.value
+  1 to 4 foreach { customerId =>
+    val res = findOrdersForCustomer(customerId)
+    val orders = res.value
 
-      res.written.foreach(l => println(s"LOG $l"))
+    res.written.foreach(l => println(s"LOG $l"))
 
-      println(s"burners for user $customerId $orders")
-    }
+    println(s"burners for user $customerId $orders")
   }
 }

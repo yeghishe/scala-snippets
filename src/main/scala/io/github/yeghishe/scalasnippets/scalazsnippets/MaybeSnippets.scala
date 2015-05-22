@@ -1,4 +1,4 @@
-package io.github.yeghishe.scalazsnippets
+package io.github.yeghishe.scalasnippets.scalazsnippets
 
 import scalaz.Scalaz._
 import scalaz._

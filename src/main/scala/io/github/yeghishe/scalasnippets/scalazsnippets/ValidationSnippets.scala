@@ -1,9 +1,9 @@
-package io.github.yeghishe.scalazsnippets
+package io.github.yeghishe.scalasnippets.scalazsnippets
 
 import scalaz.Scalaz._
 import scalaz._
 
-object ValidationSnippets {
+object ValidationSnippets extends App {
 
   case class User(name: String, age: Int)
 
@@ -19,15 +19,13 @@ object ValidationSnippets {
     validateUser(user).map(persistUser)
   }
 
-  def main(args: Array[String]): Unit = {
-    Seq(
-      createUser(User("", 18)),
-      createUser(User("Foo", 17)),
-      createUser(User("", 17)),
-      createUser(User("Foo", 19))
-    ).foreach {
-        case Failure(errors) => println(s"Errors: ${errors.foldLeft("")(_ + "\n" + _)}")
-        case Success(result) => println(s"SUCCESS $result")
-      }
-  }
+  Seq(
+    createUser(User("", 18)),
+    createUser(User("Foo", 17)),
+    createUser(User("", 17)),
+    createUser(User("Foo", 19))
+  ).foreach {
+      case Failure(errors) => println(s"Errors: ${errors.foldLeft("")(_ + "\n" + _)}")
+      case Success(result) => println(s"SUCCESS $result")
+    }
 }

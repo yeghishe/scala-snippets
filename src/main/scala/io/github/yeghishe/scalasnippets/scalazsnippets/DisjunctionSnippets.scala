@@ -1,4 +1,4 @@
-package io.github.yeghishe.scalazsnippets
+package io.github.yeghishe.scalasnippets.scalazsnippets
 
 import scalaz.Scalaz._
 import scalaz._
@@ -42,16 +42,16 @@ object DisjunctionSnippets2 extends App {
 
   def callThirdPartyService(token: String): Response = {
     token match {
-      case "good" => Response(200, "useful data")
-      case "bad"  => Response(401, "bad token")
-      case _      => Response(500, "error")
+      case "good" ⇒ Response(200, "useful data")
+      case "bad"  ⇒ Response(401, "bad token")
+      case _      ⇒ Response(500, "error")
     }
   }
 
   def getData(token: String): Int ∨ String = {
     callThirdPartyService(token) match {
-      case Response(200, d)    => d.right
-      case Response(status, _) => status.left
+      case Response(200, d)    ⇒ d.right
+      case Response(status, _) ⇒ status.left
     }
   }
 

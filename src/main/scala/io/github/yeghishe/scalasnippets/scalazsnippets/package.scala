@@ -1,4 +1,4 @@
-package io.github.yeghishe
+package io.github.yeghishe.scalasnippets
 
 /**
  * Created by yeghishe on 5/14/15.
@@ -9,10 +9,10 @@ import scalaz.syntax.monoid._
 
 package object scalazsnippets {
   def display(s: Any, description: String = ∅): Unit = {
-    val lenght = 50
+    val length = 60
     println(
-      if (description ≟ ∅) s"${" " * (lenght / 2)}$s"
-      else s"$description${" " * (lenght - description.length)}$s"
+      if (description ≟ ∅) s"${" " * (length / 2)}$s"
+      else s"$description${" " * (length - description.length)}$s"
     )
   }
 }
