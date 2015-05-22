@@ -77,6 +77,7 @@ class UserActorTest extends TestKit(ActorSystem("test-system"))
       testCode(actor, dataActorProbe)
     } finally {
       system.stop(actor)
+      system.stop(dataActorProbe.ref)
     }
   }
 
