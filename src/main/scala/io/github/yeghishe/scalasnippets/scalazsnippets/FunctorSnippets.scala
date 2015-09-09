@@ -1,7 +1,5 @@
 package io.github.yeghishe.scalasnippets.scalazsnippets
 
-import scalaz.Functor
-
 /**
  * Created by yeghishe on 5/15/15.
  */
@@ -19,6 +17,6 @@ object FunctorSnippets extends App {
   display(List(1, 2, 3).void, """ List(1, 2, 3).void """)
   display(
     List(1, 2, 3).fpoint(scalaz.std.option.optionInstance),
-    """ List(1, 2, 3).fpoint(scalaz.std.option.optionInstance """)
+    """ List(1, 2, 3).fpoint(scalaz.std.option.optionInstance) """)
   display(List(1, 2, 3) >| "a", """ List(1, 2, 3) >| "a" """)
 }

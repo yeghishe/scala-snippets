@@ -1,5 +1,7 @@
 package io.github.yeghishe.scalasnippets.scalazsnippets
 
+import scalaz.Apply
+
 /**
  * Created by yeghishe on 5/15/15.
  */
