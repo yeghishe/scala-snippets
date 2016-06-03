@@ -9,7 +9,3 @@ object TraverseSnippets extends App {
 
   // TODO: do Applicative first
 }
-
-class T[X] extends Traverse[X] {
-  override def traverseImpl[G[_], A, B](fa: X[A])(f: (A) => G[B])(implicit evidence$1: Applicative[G]): G[X[B]] = ???
-}

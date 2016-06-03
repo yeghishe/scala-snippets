@@ -1,7 +1,7 @@
 package io.github.yeghishe.scalasnippets.scalazsnippets
 
 import scala.language.higherKinds
-import scalaz.{MonadPlus, Monad}
+import scalaz.{ MonadPlus, Monad }
 
 /**
  * Created by yeghishe on 6/2/15.

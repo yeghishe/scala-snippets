@@ -8,13 +8,15 @@ scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
 
 libraryDependencies ++= {
   val scalazV = "7.1.2"
+  val scalazStreamV = "0.8"
   val akkaV = "2.3.9"
   Seq(
     "org.scalaz"        %% "scalaz-core"                 % scalazV,
     "org.scalaz"        %% "scalaz-effect"               % scalazV,
     "org.scalaz"        %% "scalaz-typelevel"            % scalazV,
+    "org.scalaz.stream" %% "scalaz-stream"               % scalazStreamV,
     "com.typesafe.akka" %% "akka-actor"                  % akkaV,
-    "org.scalaz"        %% "scalaz-scalacheck-binding"   % scalazV   % "it,test",
+    "org.scalaz"        %% "scalaz-scalacheck-binding"  % scalazV   % "it,test",
     "com.typesafe.akka" %% "akka-testkit"                % akkaV     % "it,test",
     "org.scalatest"     %% "scalatest"                   % "2.2.4"   % "it,test",
     "org.scalamock"     %% "scalamock-scalatest-support" % "3.2"     % "it,test"
